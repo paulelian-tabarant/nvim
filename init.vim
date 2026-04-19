@@ -41,25 +41,10 @@ call plug#end()
 " Load settings and keymaps
 lua require('settings')
 lua require('keymaps')
+lua require('markdown')
 
 " Airline theme definition
 let g:airline_theme='minimalist'
-
-" Markdown
-autocmd FileType markdown,txt set cursorline
-autocmd FileType markdown,txt setlocal spell spelllang=fr
-autocmd FileType markdown,txt Goyo 100
-autocmd FileType markdown,txt set wrap
-autocmd FileType markdown,txt set linebreak
-let g:vim_markdown_conceal = 2
-let g:vim_markdown_conceal_code_blocks = 0
-let g:vim_markdown_math = 1
-let g:vim_markdown_toml_frontmatter = 1
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_strikethrough = 1
-let g:vim_markdown_autowrite = 1
-let g:vim_markdown_edit_url_in = 'tab'
-let g:vim_markdown_follow_anchor = 1
 
 " Development
 
