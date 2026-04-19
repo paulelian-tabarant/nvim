@@ -8,7 +8,6 @@ call plug#begin()
 
   " Distraction-free writing
   Plug 'junegunn/goyo.vim'
-  nnoremap <C-g> :Goyo<CR>
   Plug 'junegunn/limelight.vim'
 
   " Markdown editing
@@ -39,8 +38,9 @@ call plug#begin()
 
 call plug#end()
 
-" Load settings
+" Load settings and keymaps
 lua require('settings')
+lua require('keymaps')
 
 " Airline theme definition
 let g:airline_theme='minimalist'
@@ -79,10 +79,3 @@ au FileType javascript,typescript,javascriptreact,typescriptreact,json,html,css 
 
 " Enable vertical line in coding files
 au FileType javascript,typescript,javascriptreact,typescriptreact set colorcolumn=80
-
-" Telescope file finder
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>fe <cmd>Telescope file_browser<cr>
