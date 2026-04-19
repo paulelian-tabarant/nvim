@@ -35,21 +35,10 @@ call plug#begin()
 
 call plug#end()
 
-" Load settings and keymaps
+" Load configuration modules
 lua require('settings')
 lua require('keymaps')
 lua require('markdown')
 lua require('webdev')
-
-" Airline theme definition
-let g:airline_theme='minimalist'
-
-" Development
-
-" Telescope setup
-lua require('telescope-config')
-
-" File explorer - auto-open when nvim starts without arguments
-if empty(argv())
-    au VimEnter * Telescope file_browser
-endif
+lua require('plugins.airline')
+lua require('plugins.telescope')
