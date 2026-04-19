@@ -16,11 +16,11 @@ call plug#begin()
   Plug 'SidOfc/mkdx'
 
   " File explorer
-  Plug 'preservim/nerdtree' 
+  Plug 'nvim-telescope/telescope-file-browser.nvim' 
 
   " File finder
   Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 
   " Rainbow parentheses
   Plug 'frazrepo/vim-rainbow'
@@ -101,9 +101,27 @@ let g:vim_markdown_follow_anchor = 1
 
 " Development
 
-" File explorer
+" Telescope setup
+lua << EOF
+require('telescope').setup{
+  defaults = {
+    file_ignore_patterns = { "node_modules", ".git/" },
+  },
+  extensions = {
+    file_browser = {
+      theme = "ivy",
+      hijack_netrw = true,
+      grouped = true,
+      hidden = false,
+    }
+  }
+}
+require('telescope').load_extension('file_browser')
+EOF
+
+" File explorer - auto-open when nvim starts without arguments
 if empty(argv())
-    au VimEnter * NERDTree
+    au VimEnter * Telescope file_browser
 endif
 
 " Enable line numbering for Web development
@@ -120,3 +138,4 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fe <cmd>Telescope file_browser<cr>
