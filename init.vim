@@ -102,22 +102,7 @@ let g:vim_markdown_follow_anchor = 1
 " Development
 
 " Telescope setup
-lua << EOF
-require('telescope').setup{
-  defaults = {
-    file_ignore_patterns = { "node_modules", ".git/" },
-  },
-  extensions = {
-    file_browser = {
-      theme = "ivy",
-      hijack_netrw = true,
-      grouped = true,
-      hidden = false,
-    }
-  }
-}
-require('telescope').load_extension('file_browser')
-EOF
+lua require('telescope-config')
 
 " File explorer - auto-open when nvim starts without arguments
 if empty(argv())
