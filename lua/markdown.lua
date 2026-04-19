@@ -2,6 +2,7 @@
 
 -- Load plugin configs
 require('plugins.vim-markdown')
+require('plugins.goyo')
 
 -- Autocmds for markdown and text files
 vim.api.nvim_create_autocmd('FileType', {
@@ -14,9 +15,6 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt_local.spelllang = 'fr'
     vim.opt_local.wrap = true
     vim.opt_local.linebreak = true
-
-    -- Auto-enable distraction-free mode
-    vim.cmd.Goyo('100')
   end,
   desc = 'Markdown and text file settings'
 })
