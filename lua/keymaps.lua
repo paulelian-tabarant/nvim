@@ -1,8 +1,7 @@
--- Keymaps
-
--- Telescope file finder
-vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'Find files' })
-vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { desc = 'Live grep' })
-vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { desc = 'Buffers' })
-vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { desc = 'Help tags' })
-vim.keymap.set('n', '<leader>fe', '<cmd>Telescope file_browser<cr>', { desc = 'File browser' })
+-- Global keybindings (non-plugin-specific)
+--
+-- Plugin-specific keybindings should be defined in their respective plugin files
+-- under lua/plugins/
+--
+-- This file is for global keybindings that don't belong to any specific plugin,
+-- such as custom window management, buffer navigation, or custom commands.
