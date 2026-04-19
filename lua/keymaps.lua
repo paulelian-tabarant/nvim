@@ -1,0 +1,7 @@
+-- Global keybindings (non-plugin-specific)
+--
+-- Plugin-specific keybindings should be defined in their respective plugin files
+-- under lua/plugins/
+--
+-- This file is for global keybindings that don't belong to any specific plugin,
+-- such as custom window management, buffer navigation, or custom commands.

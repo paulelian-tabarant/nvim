@@ -1,0 +1,47 @@
+-- Plugin management with vim-plug
+vim.cmd([[
+  call plug#begin()
+    " Set of defaults everyone can agree on
+    Plug 'tpope/vim-sensible'
+
+    " Status bar at bottom of the screen
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+
+    " Distraction-free writing
+    Plug 'junegunn/goyo.vim'
+    Plug 'junegunn/limelight.vim'
+
+    " Markdown editing
+    Plug 'godlygeek/tabular'
+    Plug 'SidOfc/mkdx'
+
+    " File explorer
+    Plug 'nvim-telescope/telescope-file-browser.nvim'
+
+    " File finder
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
+
+    " Indent guides
+    Plug 'nathanaelkane/vim-indent-guides'
+
+    " Brackets auto-closing
+    Plug 'raimondi/delimitmate'
+
+    " Git hints
+    Plug 'airblade/vim-gitgutter'
+
+    " Commenting tools
+    Plug 'scrooloose/nerdcommenter'
+
+  call plug#end()
+]])
+
+-- Load configuration modules
+require('settings')
+require('keymaps')
+require('plugins.airline')
+require('plugins.telescope')
+require('markdown')
+require('webdev')
