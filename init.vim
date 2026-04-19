@@ -21,9 +21,6 @@ call plug#begin()
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 
-  " Rainbow parentheses
-  Plug 'frazrepo/vim-rainbow'
-
   " Indent guides
   Plug 'nathanaelkane/vim-indent-guides'
 
@@ -42,6 +39,7 @@ call plug#end()
 lua require('settings')
 lua require('keymaps')
 lua require('markdown')
+lua require('webdev')
 
 " Airline theme definition
 let g:airline_theme='minimalist'
@@ -55,12 +53,3 @@ lua require('telescope-config')
 if empty(argv())
     au VimEnter * Telescope file_browser
 endif
-
-" Enable line numbering for Web development
-autocmd BufEnter *.{js,jsx,ts,tsx,json,html,css} set number
-
-" Rainbow parentheses on startup
-au FileType javascript,typescript,javascriptreact,typescriptreact,json,html,css call rainbow#load()
-
-" Enable vertical line in coding files
-au FileType javascript,typescript,javascriptreact,typescriptreact set colorcolumn=80
